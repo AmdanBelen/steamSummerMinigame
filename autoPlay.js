@@ -59,9 +59,10 @@ var ENEMY_TYPE = {
 };
 
 // Save old functions for toggles.
-var trt_oldCrit = window.g_Minigame.CurrentScene().DoCritEffect;
-var trt_oldPush = window.g_Minigame.m_CurrentScene.m_rgClickNumbers.push;
-
+if (window.g_Minigame !== undefined){
+	var trt_oldCrit = window.g_Minigame.CurrentScene().DoCritEffect;
+	var trt_oldPush = window.g_Minigame.m_CurrentScene.m_rgClickNumbers.push;
+}
 // disable particle effects - this drastically reduces the game's memory leak
 if (window.g_Minigame !== undefined && disableParticleEffects) {
 	disableParticles();
